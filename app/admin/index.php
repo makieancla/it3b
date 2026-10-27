@@ -60,10 +60,10 @@ if ($section === 'activity-logs') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
 
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet">
     <link href="https://cdn.datatables.net/2.3.4/css/dataTables.bootstrap5.min.css"
-        rel="stylesheet"> -->
+        rel="stylesheet">
 </head>
 
 <body>
@@ -76,10 +76,13 @@ if ($section === 'activity-logs') {
 
     <hr>
 
+
     <nav>
         <a href="index.php?section=activity-logs">Activity Logs |</a>
         <a href="index.php?section=user-sessions">User Sessions |</a>
     </nav>
+
+    <hr>
 
     <?php if ($section === 'activity-logs'): ?>
 
