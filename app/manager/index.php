@@ -137,7 +137,7 @@ if($section === 'books' && $action === 'create'){
         $bookAuthor = trim($_POST['book_author'] ?? '');
         $bookCategory = trim($_POST['book_category'] ?? '');
 
-        if ($title !== '' && $author !== '' && $category !== '') {
+        if ($bookTitle !== '' && $bookAuthor !== '' && $bookCategory !== '') {
 
             $sql = "
                 INSERT INTO books (
@@ -151,9 +151,9 @@ if($section === 'books' && $action === 'create'){
             $stmt = $pdo->prepare($sql);
 
             $stmt->execute([
-                $title,
-                $author,
-                $category
+                $bookTitle,
+                $bookAuthor,
+                $bookCategory
             ]);
 
             header("Location: index.php?section=books");
@@ -377,6 +377,9 @@ if ($section === 'borrow' && $action === 'return') {
     <title>Library System</title>
 </head>
 <body>
+
+    <h1>Welcome Manager</h1>
+    <hr>
     <h1>Simple Library System</h1>
 
     <a href="../../auth/signout.php">Sign Out</a>
@@ -659,12 +662,12 @@ if ($section === 'borrow' && $action === 'return') {
     <h1>Borrow</h1>
     <p>
         <a href="index.php?section=borrow&action=create">
-            Borrow a Book
+            Borrow Book
         </a>
     </p>
 
     <?php if ($action=='create'): ?>
-        <h2>Borrow a Book</h2>
+        <h2>Borrow Book</h2>
 
         <form method="POST">
             
